@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/md_amber_700</color>
+    <color name="colorPrimaryVariant">@color/md_amber_600</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">@color/md_amber_700</color>
+    <color name="colorSecondaryVariant">@color/md_amber_600</color>
+</resources>

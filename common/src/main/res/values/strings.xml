@@ -1,0 +1,11 @@
+<resources>
+    <string name="title">Enter a number</string>
+    <string name="convert">Convert</string>
+    <string name="from">From</string>
+    <string name="from_cm_to_feet">From Cm to Feet</string>
+    <string name="from_feet_to_cm">From Feet to CM</string>
+    <string name="from_kg_to_lbs">From Kg to Lbs</string>
+    <string name="from_lbs_to_kg">From LBS to Kg</string>
+    <string name="something_went_wrong">Something went wrong, please try again.</string>
+    <string name="convert_result">Convert Result:</string>
+</resources>

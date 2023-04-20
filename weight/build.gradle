@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.guy.weight'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.guy.weight"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        def addConstantTo = {target, constantName, constantValue ->
+            target.manifestPlaceholders += [ (constantName):constantValue]
+            target.buildConfigField "String", "${constantName}", "\"${constantValue}\""
+        }
+
+        debug {
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField('String', 'BaseUrl', '"https://apidemo."')
+
+            addConstantTo(owner,"WEATHER_API_KEY", "GHI1")
+            addConstantTo(owner,"AD_MOB_ID", "AAAAA")
+            addConstantTo(owner,"AD_MOB_BANNER_ID", "sdfsdfdsfdsf")
+
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            addConstantTo(owner,"AD_MOB_ID", "BBBBBB")
+            addConstantTo(owner,"WEATHER_API_KEY", "GHI_TRUE1")
+            addConstantTo(owner,"AD_MOB_BANNER_ID", "ryrwyywrtywr")
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':common')
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
